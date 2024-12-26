@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bakery Delight</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts (optional for custom fonts) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa;
+      }
+
+      /* Navbar styling */
+      .navbar {
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: 600;
+      }
+
+      .hero-section {
+        background: url("https://png.pngtree.com/thumb_back/fw800/background/20240530/pngtree-bakery-bread-border-with-copy-space-image_15735685.jpg")
+          no-repeat center center/cover;
+        color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .categories img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+
+      .category-card {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .category-card:hover {
+        transform: scale(1.05);
+      }
+
+      .review-section {
+        background-color: #f1f1f1;
+        padding: 60px 0;
+      }
+
+      .review-card {
+        border: none;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer {
+        background-color: #28a745;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .footer a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Product Section */
+      .product-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .product-card:hover {
+        transform: scale(1.05);
+      }
+
+      .product-price {
+        color: #28a745;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .price-button {
+        background-color: #28a745;
+        color: white;
+      }
+      .price-button:hover {
+        background-color: white;
+        border: 1px solid #28a745;
+        color: #28a745;
+      }
+      /* Shadow effect for category cards */
+      .category-card,
+      .product-card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Hover effect for card */
+      .category-card:hover,
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
+          0 8px 30px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Bakery Delight</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#hero-section">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#categories">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#all-products">All Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="hero-section">
+      <div class="container">
+        <h1 class="display-4">Welcome to Bakery Delight</h1>
+        <p class="lead">Delicious Baked Goods, Made Fresh Daily!</p>
+        <a href="#categories" class="btn btn-light btn-lg">Explore Our Menu</a>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories py-5">
+      <div class="container text-center">
+        <h2 class="mb-5">Our Delicious Products</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card category-card">
+              <img
+                src="https://img.freepik.com/premium-photo/birthday-cake-white-background_884296-2355.jpg"
+                class="card-img-top"
+                style="height: 300px; object-fit: contain"
+                alt="Cakes"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cakes</h5>
+                <p class="card-text">
+                  From chocolate to vanilla, we have all types of cakes for
+                  every occasion.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card category-card">
+              <img
+                src="https://www.shutterstock.com/image-photo/sliced-sourdough-bread-isolated-on-600nw-2239107165.jpg"
+                class="card-img-top"
+                style="height: 300px; object-fit: contain"
+                alt="Breads"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Breads</h5>
+                <p class="card-text">
+                  Freshly baked breads, perfect for sandwiches or a morning
+                  snack.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card category-card">
+              <img
+                src="https://media.istockphoto.com/id/1134897271/photo/biscuits-with-chocolate-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=lzX92wxN5mwL0ZsQndE_XubR0h_g3fyMgy0sKMQIAtg="
+                class="card-img-top"
+                style="height: 300px; object-fit: contain"
+                alt="Cookies"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cookies</h5>
+                <p class="card-text">
+                  Warm and chewy, our cookies are sure to satisfy your sweet
+                  cravings.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Products Section -->
+    <section id="all-products" class="py-5">
+      <div class="container text-center">
+        <h2 class="mb-5">All Our Bakery Products</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card product-card">
+              <img
+                src="https://img.freepik.com/premium-photo/birthday-cake-white-background_884296-2355.jpg"
+                class="card-img-top"
+                style="height: 300px; object-fit: contain"
+                alt="Chocolate Cake"
+              />
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Chocolate Cake</h5>
+                <p class="card-text">
+                  A rich and moist chocolate cake, perfect for any celebration.
+                </p>
+                <p class="product-price">$25.00</p>
+                <button class="btn price-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card product-card">
+              <img
+                src="https://www.shutterstock.com/image-photo/sliced-sourdough-bread-isolated-on-600nw-2239107165.jpg"
+                class="card-img-top"
+                style="height: 300px; object-fit: contain"
+                alt="Sourdough Bread"
+              />
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Sourdough Bread</h5>
+                <p class="card-text">
+                  Crusty on the outside, soft and airy on the inside. A true
+                  classic.
+                </p>
+                <p class="product-price">$8.00</p>
+                <button class="btn price-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card product-card">
+              <img
+                src="https://media.istockphoto.com/id/1134897271/photo/biscuits-with-chocolate-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=lzX92wxN5mwL0ZsQndE_XubR0h_g3fyMgy0sKMQIAtg="
+                style="height: 300px; object-fit: contain"
+                class="card-img-top"
+                alt="Oatmeal Cookies"
+              />
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Oatmeal Cookies</h5>
+                <p class="card-text">
+                  Chewy and hearty oatmeal cookies with a touch of cinnamon.
+                </p>
+                <p class="product-price">$10.00</p>
+                <button class="btn price-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Product 1: Blueberry Muffins -->
+          <div class="col-md-4 mb-4">
+            <div class="card product-card">
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/026/511/140/small_2x/chocolate-muffin-isolated-on-white-background-ai-generated-photo.jpg"
+                class="card-img-top"
+                style="height: 300px; object-fit: contain"
+                alt="Blueberry Muffins"
+              />
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Blueberry Muffins</h5>
+                <p class="card-text">
+                  Soft and fluffy muffins bursting with fresh blueberries.
+                </p>
+                <p class="product-price">$12.00</p>
+                <button class="btn price-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- Product 2: Croissants -->
+          <div class="col-md-4 mb-4">
+            <div class="card product-card">
+              <img
+                src="https://img.freepik.com/premium-photo/croissant-top-view-isolated-white-background_269410-1577.jpg"
+                class="card-img-top"
+                style="height: 300px; object-fit: contain"
+                alt="Croissants"
+              />
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Croissants</h5>
+                <p class="card-text">
+                  Buttery, flaky croissants perfect for breakfast or snacks.
+                </p>
+                <p class="product-price">$15.00</p>
+                <button class="btn price-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- Product 3: Cinnamon Rolls -->
+          <div class="col-md-4 mb-4">
+            <div class="card product-card">
+              <img
+                src="https://img.freepik.com/premium-photo/homemade-cinnamon-bun-isolated-white-background-close-up_186456-3189.jpg"
+                style="height: 300px; object-fit: contain"
+                class="card-img-top"
+                alt="Cinnamon Rolls"
+              />
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Cinnamon Rolls</h5>
+                <p class="card-text">
+                  Sweet and sticky cinnamon rolls topped with cream cheese
+                  icing.
+                </p>
+                <p class="product-price">$18.00</p>
+                <button class="btn price-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="review-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">What Our Customers Say</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card review-card">
+              <div class="card-body text-center">
+                <!-- User Image -->
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt-JmDfLz7ErRiTZ9vIme55A9JGQqdx8qJ_xQ_lB2UIqGAFELpsKQQ8xuTSrlqrly-tSQ&usqp=CAU"
+                  class="user-image mb-3"
+                  style="
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    object-fit: contain;
+                  "
+                  alt="John Doe"
+                />
+                <h5 class="card-title">John Doe</h5>
+                <p class="card-text">
+                  "The cakes here are absolutely amazing! So fresh and
+                  delicious."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card review-card">
+              <div class="card-body text-center">
+                <!-- User Image -->
+                <img
+                  src="https://www.venmond.com/demo/vendroid/img/avatar/big.jpg"
+                  class="user-image mb-3"
+                  style="
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    object-fit: contain;
+                  "
+                  alt="Jane Smith"
+                />
+                <h5 class="card-title">Jane Smith</h5>
+                <p class="card-text">
+                  "Best bread I’ve had in years! Fluffy, soft, and just the
+                  right amount of flavor."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card review-card">
+              <div class="card-body text-center">
+                <!-- User Image -->
+                <img
+                  src="https://huber.ghostpool.com/wp-content/uploads/avatars/3/596dfc2058143-bpfull.png"
+                  class="user-image mb-3"
+                  style="
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    object-fit: contain;
+                  "
+                  alt="Mark Johnson"
+                />
+                <h5 class="card-title">Mark Johnson</h5>
+                <p class="card-text">
+                  "Their cookies are heavenly! A perfect treat with coffee."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Get In Touch</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6 p-3 product-card"   style="background-color: #fff;">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Write your message here"
+                  required
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn price-button">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map" class="py-0">
+      <div class="container-fluid px-0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14877.354084686192!2d72.87409822994299!3d21.218420740828943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f6ef999fe8b%3A0x2b1e12024710c65b!2sChikuwadi%2C%20Nana%20Varachha%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1735229951292!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <p>&copy; 2024 Bakery Delight. All Rights Reserved.</p>
+        <p>
+          <a href="mailto:contact@bakerydelight.com">Contact Us</a> |
+          <a href="#">Privacy Policy</a>
+        </p>
+        <div class="social-icons">
+          <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
