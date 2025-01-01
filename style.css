@@ -1,0 +1,106 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  /* Navbar styling */
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand {
+    font-weight: 600;
+  }
+
+  .hero-section {
+    background: url("./Assets/Background-Image1.jpg")
+      no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .categories img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .category-card {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .category-card:hover {
+    transform: scale(1.05);
+  }
+
+  .review-section {
+    background-color: #f1f1f1;
+    padding: 60px 0;
+  }
+
+  .review-card {
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer {
+    background-color: #28a745;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .footer a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Product Section */
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+
+  .product-price {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .price-button {
+    background-color: #28a745;
+    color: white;
+  }
+  .price-button:hover {
+    background-color: white;
+    border: 1px solid #28a745;
+    color: #28a745;
+  }
+  /* Shadow effect for category cards */
+  .category-card,
+  .product-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover effect for card */
+  .category-card:hover,
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15),
+      0 8px 30px rgba(0, 0, 0, 0.1);
+  }
